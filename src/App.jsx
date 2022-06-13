@@ -19,9 +19,11 @@ function App() {
   const setUsername = useSetRecoilState(userNameState);
 
   useEffect(() => {
-    setBgOpacity(localStorage.getItem('bgOpacity'));
-    setUserCity(localStorage.getItem('city'));
-    setUsername(localStorage.getItem('username'));
+    if (localStorage.getItem('bgOpacity'))
+      setBgOpacity(localStorage.getItem('bgOpacity'));
+    if (localStorage.getItem('username'))
+      setUsername(localStorage.getItem('username'));
+    if (localStorage.getItem('city')) setUserCity(localStorage.getItem('city'));
   }, []);
   return (
     <Router>

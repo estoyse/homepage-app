@@ -22,23 +22,28 @@ const NewsContainer = () => {
       ? `https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=${API_KEY}`
       : `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
     setLoading(true);
-    await fetch(URL).then((res) =>
-      res.json().then((data) => {
-        let rowNews = [];
-        data.articles.map((article) => {
-          let articleStructure = {
-            title: article.title,
-            url: article.url,
-            img: article.urlToImage,
-            description: article.description,
-          };
-          rowNews.push(articleStructure);
-        });
+    await fetch(URL)
+      .then((res) =>
+        res
+          .json()
+          .then((data) => {
+            let rowNews = [];
+            data.articles.map((article) => {
+              let articleStructure = {
+                title: article.title,
+                url: article.url,
+                img: article.urlToImage,
+                description: article.description,
+              };
+              rowNews.push(articleStructure);
+            });
 
-        setNews(rowNews);
-        setLoading(false);
-      })
-    );
+            setNews(rowNews);
+            setLoading(false);
+          })
+          .catch((err) => console.log(err))
+      )
+      .catch((err) => console.log(err));
   };
 
   useEffect(fetchNews, [selectedCategory]);

@@ -22,7 +22,7 @@ const Settings = () => {
   const saveToLocalStorage = () => {
     setCity(weatherQuery);
     localStorage.setItem('username', username);
-    localStorage.setItem('city', city);
+    localStorage.setItem('city', weatherQuery);
     localStorage.setItem('bgOpacity', bgOpacity);
     localStorage.setItem('bgUrl', bgUrl);
     setTimeout(() => isOpen(false), 300);
