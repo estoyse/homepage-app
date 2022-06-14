@@ -9,6 +9,7 @@ import {
   backgroundOpacityState,
   userCityState,
   userNameState,
+  isFirstTime,
 } from './state/atoms';
 import './styles/main.css';
 import ImagesContainer from './components/images/imagesContainer';
@@ -17,12 +18,15 @@ function App() {
   const setBgOpacity = useSetRecoilState(backgroundOpacityState);
   const setUserCity = useSetRecoilState(userCityState);
   const setUsername = useSetRecoilState(userNameState);
+  const setIsFirstTime = useSetRecoilState(isFirstTime);
 
   useEffect(() => {
     if (localStorage.getItem('bgOpacity'))
       setBgOpacity(localStorage.getItem('bgOpacity'));
     if (localStorage.getItem('username'))
       setUsername(localStorage.getItem('username'));
+    if (localStorage.getItem('isFirstTime'))
+      setUserCity(localStorage.getItem('isFirstTime'));
     if (localStorage.getItem('city')) setUserCity(localStorage.getItem('city'));
   }, []);
   return (

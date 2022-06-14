@@ -24,7 +24,6 @@ const ImagesContainer = () => {
     await fetch(URL).then((res) =>
       res.json().then((data) => {
         const rowImages = [];
-        console.log(data);
         data.forEach((el) => {
           let image = new Image(
             el.id,
@@ -50,7 +49,6 @@ const ImagesContainer = () => {
     await fetch(URL).then((res) =>
       res.json().then((data) => {
         const rowImages = [];
-        console.log(data);
         data.results.forEach((el) => {
           let image = new Image(
             el.id,

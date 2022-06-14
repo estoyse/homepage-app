@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SidebarStyles } from '../styles/SidebarStyles';
 import { FiHome, FiSettings, FiImage, FiTrello, FiFilm } from 'react-icons/fi';
-import { settingsModalOpen } from '../state/atoms';
+import { isFirstTime, settingsModalOpen } from '../state/atoms';
 import Tooltip from 'react-tooltip-lite';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 const Sidebar = () => {
   const [modalOpen, setMoadalOpen] = useRecoilState(settingsModalOpen);
+  const firstTime = useRecoilValue(isFirstTime);
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('isFirstTime'))) setMoadalOpen(true);
+  }, []);
   return (
     <SidebarStyles>
       <div>
