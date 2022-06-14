@@ -8,7 +8,6 @@ import {
   userCityState,
   userNameState,
   backgroundImgState,
-  isFirstTime,
 } from '../state/atoms';
 
 const Settings = () => {
@@ -17,7 +16,6 @@ const Settings = () => {
   const [city, setCity] = useRecoilState(userCityState);
   const [username, setUsername] = useRecoilState(userNameState);
   const [bgUrl, setBgUrl] = useRecoilState(backgroundImgState);
-  const [firstTime, setFirstTime] = useRecoilState(isFirstTime);
 
   const [weatherQuery, setWeatherQuery] = useState(city);
 
@@ -28,7 +26,6 @@ const Settings = () => {
     localStorage.setItem('city', weatherQuery);
     localStorage.setItem('bgOpacity', bgOpacity);
     localStorage.setItem('bgUrl', bgUrl);
-    localStorage.setItem('isFirstTime', firstTime);
     setTimeout(() => isOpen(false), 300);
   };
   const readFromLocalStorage = () => {
@@ -38,7 +35,8 @@ const Settings = () => {
     setBgOpacity(localStorage.getItem('bgOpacity'));
     setWeatherQuery(city);
   };
-  useEffect(() => setFirstTime(false));
+  useEffect(saveToLocalStorage, []);
+
   return (
     <ModalStyles className={open ? 'open' : ''}>
       <RiCloseLine
