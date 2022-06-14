@@ -11,7 +11,7 @@ const Sidebar = () => {
   const firstTime = useRecoilValue(isFirstTime);
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem('isFirstTime'))) setMoadalOpen(true);
+    if (JSON.parse(firstTime)) setMoadalOpen(true);
   }, []);
   return (
     <SidebarStyles>

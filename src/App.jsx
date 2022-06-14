@@ -26,7 +26,7 @@ function App() {
     if (localStorage.getItem('username'))
       setUsername(localStorage.getItem('username'));
     if (localStorage.getItem('isFirstTime'))
-      setUserCity(localStorage.getItem('isFirstTime'));
+      setIsFirstTime(localStorage.getItem('isFirstTime'));
     if (localStorage.getItem('city')) setUserCity(localStorage.getItem('city'));
   }, []);
   return (
