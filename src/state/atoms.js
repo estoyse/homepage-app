@@ -10,7 +10,7 @@ export const backgroundOpacityState = atom({
 export const backgroundImgState = atom({
   key: 'backgroundImg',
   default:
-    'https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+    'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTI5NjJ8MHwxfHNlYXJjaHwxMHx8YmVhY2h8ZW58MHx8fHwxNjU1MTg5Njkx&ixlib=rb-1.2.1&q=80&w=1080',
 });
 export const settingsModalOpen = atom({
   key: 'settingsModalOpen',
