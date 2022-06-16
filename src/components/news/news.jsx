@@ -1,72 +1,39 @@
 import React from 'react';
 import { NewsStyles } from '../../styles/newsStyles';
+import Article from './article';
 import Loading from '../loading';
-import { dateToString } from '../../helpers/date';
-import { ArticleStyles } from '../../styles/articleStyles';
+import { v4 as uuidv4 } from 'uuid';
 
-const News = ({
-  categories,
-  loading,
-  news,
-  setSelectedCategory,
-  selectedCategory,
-}) => {
+const News = ({ news, loading, error }) => {
   return (
     <NewsStyles>
-      <div className="news">
-        <div className="header">
-          <ul>
-            {categories.map((cat) => (
-              <button
-                className={selectedCategory == cat.value ? 'btn active' : 'btn'}
-                value={cat.value}
-                key={cat.name}
-                onClick={(e) => setSelectedCategory(e.target.value)}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </ul>
-        </div>
-        <div className="main">
-          {loading ? (
-            <Loading />
-          ) : news.length > 0 ? (
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="news">
+          <div className="header">
+            <h3>World News</h3>
+          </div>
+          <div className="main">
             <div className="articles">
-              {news.map((item) => (
-                <a
-                  key={item.title}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ArticleStyles className="article">
-                    <div
-                      className="article__img"
-                      style={{
-                        backgroundImage: `url(${item.img})`,
-                        backgroundSize: 'cover',
-                      }}
-                    >
-                      <div className="article__meta">
-                        <p className="article__meta__date">
-                          {dateToString(item.date)}
-                        </p>
-                        <div className="article__meta__desc">
-                          <p>{item.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h3 className="article__title">{item.title}</h3>
-                  </ArticleStyles>
-                </a>
-              ))}
+              {!error ? (
+                news.map((article) => (
+                  <Article
+                    key={uuidv4()}
+                    title={article.name}
+                    url={article.url}
+                    image={article.image?.thumbnail.contentUrl}
+                    date={article.datePublished}
+                    loading={loading}
+                  />
+                ))
+              ) : (
+                <p>error occured</p>
+              )}
             </div>
-          ) : (
-            <div className="nodata">There are no News in here</div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </NewsStyles>
   );
 };

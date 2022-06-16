@@ -28,19 +28,18 @@ const Gmail = ({
             ) : (
               <ul className="mails">
                 {emails.map((email) => (
-                  <li key={email.id}>
+                  <li key={email.id} className="single-mail">
                     <div className={email.unRead ? 'dot unread' : 'dot'}></div>
                     <a
                       href={`https://mail.google.com/mail/u/?authuser=${userEmail}#all/${email.threadId}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => markAsRead(email.id)}
-                      className="single-mail"
                     >
                       <div className="mail-header">
                         <p className="username">
                           <span>
-                            {extractEmailInfo(email.from).name || '-'}{' '}
+                            {extractEmailInfo(email.from).name || '-'}
                             &nbsp;&nbsp;
                             <span className="user-email">
                               {extractEmailInfo(email.from).email || '-'}

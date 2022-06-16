@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   font-family: Rubik, sans-serif;
@@ -96,19 +97,15 @@ a {
 }
 input[type='range'] {
   -webkit-appearance: none;
-
   width: 100%;
   height: 100%;
-
   background: transparent;
   outline: none;
-
   margin: 5px 0;
 }
 
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-
   border: none;
 }
 
@@ -120,28 +117,16 @@ input[type='range']::-moz-focus-outer {
   border: 0;
 }
 
-/*
-
-  HANDLE
-
-*/
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-
   width: 14px;
   height: 14px;
-
   background: #696969;
-
   border-radius: 5px;
-
   cursor: pointer;
-
   margin-top: -4px;
-
   -webkit-transform: scale(1);
   transform: scale(1);
-
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -152,17 +137,12 @@ input[type='range']:focus::-webkit-slider-thumb {
 
 input[type='range']::-moz-range-thumb {
   -webkit-appearance: none;
-
   width: 14px;
   height: 14px;
-
   background: #696969;
-
   border: none;
   border-radius: 5px;
-
   cursor: pointer;
-
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -170,12 +150,6 @@ input[type='range']:hover::-moz-range-thumb,
 input[type='range']:focus::-moz-range-thumb {
   transform: scale(1.2);
 }
-
-/*
-
-  TRACK
-
-*/
 
 input[type='range']::-webkit-slider-runnable-track {
   width: 100%;
@@ -188,75 +162,17 @@ input[type='range']::-webkit-slider-runnable-track {
 input[type='range']::-moz-range-track {
   width: 100%;
   height: 6px;
-
   cursor: pointer;
   background: #1d1d1d;
-
   border-radius: 10px;
 }
 
-.preferences {
-  list-style-type: none;
-}
-.preferences li {
-  margin-bottom: 2rem;
-}
-.preferences li input {
-  margin-top: 1rem;
-  outline: none;
-}
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 5px;
-}
-
-.mail-header {
-  margin-bottom: 5px;
-}
-.mail-header .username {
-  font-weight: 600;
-}
-.user-email {
-  font-weight: 400;
-  font-size: 13px;
-}
-.header-time {
-  float: right;
-  font-weight: 500;
-  font-size: 14px;
-}
-.mails {
-  overflow-y: scroll;
-  max-height: 50vh;
-  padding: 1rem;
-  list-style: none;
-}
-.mails li {
-  position: relative;
-}
-li .dot {
-  display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -15px;
-  height: 10px;
-  width: 10px;
-  border-radius: 5px;
-  background-color: #fff;
-}
-.dot.unread {
-  display: block;
-}
-.mail-line {
-  font-size: 13px;
-  font-weight: 300;
-}
-.mail-line .subject {
-  font-weight: 500;
 }
 .translate-on-hover:hover > svg {
   transform: scale(1.5) translateX(5px);

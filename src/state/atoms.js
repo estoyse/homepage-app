@@ -28,7 +28,3 @@ export const websitesModalState = atom({
   key: 'websitesModalOpen',
   default: false,
 });
-export const isFirstTime = atom({
-  key: 'fisrtTime',
-  default: true,
-});

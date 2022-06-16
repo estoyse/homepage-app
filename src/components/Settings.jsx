@@ -21,7 +21,6 @@ const Settings = () => {
 
   const saveToLocalStorage = () => {
     setCity(weatherQuery);
-    setFirstTime(false);
     localStorage.setItem('username', username);
     localStorage.setItem('city', weatherQuery);
     localStorage.setItem('bgOpacity', bgOpacity);

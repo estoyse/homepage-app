@@ -12,6 +12,7 @@ import {
 } from './state/atoms';
 import './styles/main.css';
 import ImagesContainer from './components/images/imagesContainer';
+import HackernewsContainer from './components/heckerNews/hackerNewsContainer';
 
 function App() {
   const setBgOpacity = useSetRecoilState(backgroundOpacityState);
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path="/news" element={<NewsContainer />} />
+          <Route exact path="/hackernews" element={<HackernewsContainer />} />
           <Route exact path="/images" element={<ImagesContainer />} />
           <Route path="/" element={<Home />} />
         </Routes>

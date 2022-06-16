@@ -1,7 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { SidebarStyles } from '../styles/SidebarStyles';
-import { FiHome, FiSettings, FiImage, FiTrello, FiFilm } from 'react-icons/fi';
+import {
+  FiHome,
+  FiSettings,
+  FiImage,
+  FiTrello,
+  FiFilm,
+  FiMonitor,
+} from 'react-icons/fi';
 import { settingsModalOpen } from '../state/atoms';
 import Tooltip from 'react-tooltip-lite';
 import { useRecoilState } from 'recoil';
@@ -23,6 +30,13 @@ const Sidebar = () => {
           <Tooltip content="News" direction={'up'} arrow={false}>
             <NavLink to="/news">
               <FiTrello />
+            </NavLink>
+          </Tooltip>
+        </li>
+        <li>
+          <Tooltip content="Hacker News" direction={'up'} arrow={false}>
+            <NavLink to="/hackernews">
+              <FiMonitor />
             </NavLink>
           </Tooltip>
         </li>

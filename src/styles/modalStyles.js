@@ -52,4 +52,14 @@ export const ModalStyles = styled.div`
     cursor: pointer;
     user-select: none;
   }
+  .preferences {
+    list-style-type: none;
+    li {
+      margin-bottom: 2rem;
+      input {
+        margin-top: 1rem;
+        outline: none;
+      }
+    }
+  }
 `;
