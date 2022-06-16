@@ -42,10 +42,3 @@ const NewsContainer = () => {
 };
 
 export default NewsContainer;
-/* {
-   id: uuidv4(),
-            title: article.name,
-            url: article.url,
-            image: article.image.thumbnail.contentUrl,
-            date: article.datePublished,
-}, */
