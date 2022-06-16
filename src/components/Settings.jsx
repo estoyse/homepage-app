@@ -34,7 +34,6 @@ const Settings = () => {
     setBgOpacity(localStorage.getItem('bgOpacity'));
     setWeatherQuery(city);
   };
-  useEffect(saveToLocalStorage, []);
 
   return (
     <ModalStyles className={open ? 'open' : ''}>
